@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import products from "./products";
 
 function App() {
+  const productList = products.map((product) => {
+    return (
+      <div className="one-item">
+        <img src={product.image}></img>
+        <p>{product.name}</p>
+        <p>{product.price} </p>
+      </div>
+    );
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="Main">
+        <h1>RFM Bakery</h1>
+        <h4>Best Bakery in Kuwait</h4>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI8ordOBSmIur1wp9ACpEYmTr4wPn6vR4fPQ&usqp=CAU" />
+      </div>
+      <div className="design">{productList}</div>
+    </>
   );
 }
 
